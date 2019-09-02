@@ -13,12 +13,12 @@
   <form class = "botoes">
     <ion-item>
       <ion-label>CPF</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input [(ngModel)]  = "creds.cpf" name = cpf type="text"></ion-input>
     </ion-item>
   <div>
     <ion-item>
         <ion-label>Senha</ion-label>
-          <ion-input type = "password"></ion-input>
+          <ion-input [(ngModel)]  = "creds.senha" name = senha type = "password"></ion-input>
       </ion-item>
 
       <button ion-button (click)="login()">Entrar</button>
