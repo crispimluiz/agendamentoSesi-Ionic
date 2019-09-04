@@ -19,7 +19,7 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: 'HomePage' },
-      { title: 'Cadastro', component: 'PessoaPage' },
+      { title: 'Usuário', component: 'PessoaPage' },
       { title: 'Turma', component: 'TurmaPage' }
     ];
 

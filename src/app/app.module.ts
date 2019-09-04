@@ -12,6 +12,7 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptors';
 import { authService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { TurmaService } from '../services/domain/turma.service';
+import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TurmaService } from '../services/domain/turma.service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PessoaService,
+    AuthInterceptorProvider,
     ErrorInterceptorProvider,
     authService,
     StorageService,
