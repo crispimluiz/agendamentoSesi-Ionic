@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, MenuController } from 'ionic-angular';
-import { IonicPage } from 'ionic-angular/navigation/ionic-page';
+import { NavController, IonicPage } from 'ionic-angular';
+import { MenuController } from 'ionic-angular/components/app/menu-controller';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
 import { authService } from '../../services/auth.service';
 
@@ -14,9 +14,10 @@ export class HomePage {
   creds : CredenciaisDTO = {
     cpf: "",
     senha: ""
-  }
+  };
 
-  constructor(public navCtrl: NavController,
+  constructor(
+    public navCtrl: NavController,
     public menu: MenuController,
     public auth: authService) {
 
@@ -26,16 +27,21 @@ export class HomePage {
     this.menu.swipeEnable(false);
   }
 
-    ionViewDidLeave() {
+  ionViewDidLeave() {
     this.menu.swipeEnable(true);
   }
 
-  login(){
+
+  login() {
     this.auth.authenticate(this.creds)
-      .subscribe(response =>
-        {console.log(response.headers.get('Authorization'));
+      .subscribe(response => {
+        this.auth.sucessfullLogin(response.headers.get('Authorization'));
         this.navCtrl.setRoot('PessoaPage');
       },
       error => {});
+  }
+
+  signup() {
+    this.navCtrl.push('SignupPage');
   }
 }

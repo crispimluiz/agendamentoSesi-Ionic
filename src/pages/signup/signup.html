@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class = "imagemLogo">
+      <img src="assets/imgs/logo.png">
+    </div>
+
+  <form (ngSubmit)="signupUser(); $event.preventDefault()">
+    <ion-item>
+      <ion-label stacked>Nome*</ion-label>
+      <ion-input name="nome" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>cpf*</ion-label>
+        <ion-input name="cpf" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Email*</ion-label>
+          <ion-input name="email" type="text"></ion-input>
+        </ion-item>
+      <ion-list radio-group name = "pessoaResponsavel">
+        <ion-list-header>
+          Responsável de Aluno(a)?
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Sim</ion-label>
+          <ion-radio checked="true" value = '1'></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Não</ion-label>
+          <ion-radio checked="true" value = '0'></ion-radio>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <ion-label stacked>Data de Nascimento</ion-label>
+        <ion-input name="dataNascimento" type="Data"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Recado</ion-label>
+        <ion-input name="observacao" type="text"></ion-input>
+        <ion-item>
+          <ion-label stacked>Celular*</ion-label>
+          <ion-input name="celular" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Celular 2</ion-label>
+          <ion-input name="celular" type="text"></ion-input>
+        </ion-item>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>senha</ion-label>
+          <ion-input name="senha" type="password"></ion-input>
+      </ion-item>
+      <button ion-button block type = "submit">Criar Conta</button>
+  </form>
+
+</ion-content>
