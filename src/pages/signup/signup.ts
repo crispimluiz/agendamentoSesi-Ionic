@@ -16,18 +16,16 @@ export class SignupPage {
     public formBuilder: FormBuilder) {
 
       this.formGroup = this.formBuilder.group({
-        nome:['', [Validators.required, Validators.minLength(5), Validators.minLength(120)]],
+        nome:['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
         cpf:['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
         email:['', [Validators.required, Validators.email]],
         pessoaResponsavel:['', Validators.required],
-        dataNascimento: ['', Validators.required],
+        dataNascimento: ['',[]],
         observacao: ['',[]],
         celular:['', Validators.required],
         celular2:['', []],
         senha:['', [Validators.required]]
-
-
-      })
+      });
 
   }
 

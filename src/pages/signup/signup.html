@@ -7,7 +7,7 @@
 <ion-content padding>
 
     <div class = "imagemLogo">
-      <img src="assets/imgs/logo.png">
+      <img src="assets/imgs/Topo-Pagina-Todos.png">
     </div>
 
   <form [formGroup]="formGroup" (ngSubmit)="signupUser(); $event.preventDefault()">
@@ -15,14 +15,17 @@
       <ion-label stacked>Nome*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
+<p class = "danger" *ngIf = "formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>Valor Inválido</p>
     <ion-item>
         <ion-label stacked>cpf*</ion-label>
         <ion-input formControlName="cpf" type="text" pattern=".{10,11}[0-9]+$" maxlength="11"></ion-input>
       </ion-item>
+<p class = "danger" *ngIf = "formGroup.controls.cpf.dirty && formGroup.controls.cpf.errors" margin-left>Valor Inválido</p>
       <ion-item>
           <ion-label stacked>Email*</ion-label>
           <ion-input formControlName="email" type="text"></ion-input>
         </ion-item>
+<p class = "danger" *ngIf = "formGroup.controls.email.dirty && formGroup.controls.email.errors" margin-left>Valor Inválido</p>
       <ion-list radio-group formControlName = "pessoaResponsavel">
         <ion-list-header>
           Responsável de Aluno(a)?*
@@ -35,11 +38,13 @@
           <ion-label>Não</ion-label>
           <ion-radio checked="true" value = '0'></ion-radio>
         </ion-item>
+<p class = "danger" *ngIf = "formGroup.controls.pessoaResponsavel.dirty && formGroup.controls.pessoaResponsavel.errors" margin-left>Valor Inválido</p>
       </ion-list>
       <ion-item>
         <ion-label stacked>Data de Nascimento*</ion-label>
         <ion-datetime formControlName="dataNascimento" type="Data" displayFormat="DD MM YYYY"></ion-datetime>
       </ion-item>
+<p class = "danger" *ngIf = "formGroup.controls.dataNascimento.dirty && formGroup.controls.dataNascimento.errors" margin-left>Valor Inválido</p>
       <ion-item>
         <ion-label stacked>Recado</ion-label>
         <ion-input formControlName="observacao" type="text"></ion-input>
@@ -47,6 +52,7 @@
           <ion-label stacked>Celular*</ion-label>
           <ion-input formControlName="celular" type="text"></ion-input>
         </ion-item>
+<p class = "danger" *ngIf = "formGroup.controls.celular.dirty && formGroup.controls.celular.errors" margin-left>Valor Inválido</p>
         <ion-item>
           <ion-label stacked>Celular 2</ion-label>
           <ion-input formControlName="celular2" type="text"></ion-input>
@@ -56,7 +62,8 @@
           <ion-label stacked>senha*</ion-label>
           <ion-input formControlName="senha" type="password"></ion-input>
       </ion-item>
-      <button ion-button block type = "submit">Criar Conta</button>
+<p class = "danger" *ngIf = "formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Valor Inválido</p>
+      <button ion-button block type = "submit" >Criar Conta</button>
   </form>
 
 </ion-content>
