@@ -1,3 +1,5 @@
+import { DateTimeData } from "ionic-angular/umd/util/datetime-util";
+
 export interface PessoaDTO{
   id : string,
   nome : string,
@@ -6,6 +8,7 @@ export interface PessoaDTO{
   ativa : string,
   observacao : string,
   pessoaResponsavel : string,
+  dataNascimento: DateTimeData,
   celular : string,
   celular2 : string,
   celular3 : string

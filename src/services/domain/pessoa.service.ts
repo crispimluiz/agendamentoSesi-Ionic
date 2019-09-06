@@ -16,4 +16,15 @@ export class PessoaService{
     return this.http.get<PessoaDTO>(`${API_CONFIG.baseUrl}/pessoas/cpf?value=${cpf}`);
 
   }
+
+  insert (obj : PessoaDTO){
+    return this.http.post(
+      `${API_CONFIG.baseUrl}/pessoas`,
+      obj,
+      {
+        observe: 'response',
+        responseType: 'text'
+      }
+    );
+  }
 }

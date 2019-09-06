@@ -4,7 +4,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-
+import { BrMaskerModule } from 'brmasker-ionic-3';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PessoaService } from '../services/domain/pessoa.service';
@@ -21,6 +21,7 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrMaskerModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
