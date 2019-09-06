@@ -10,22 +10,22 @@
       <img src="assets/imgs/logo.png">
     </div>
 
-  <form (ngSubmit)="signupUser(); $event.preventDefault()">
+  <form [formGroup]="formGroup" (ngSubmit)="signupUser(); $event.preventDefault()">
     <ion-item>
       <ion-label stacked>Nome*</ion-label>
-      <ion-input name="nome" type="text"></ion-input>
+      <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label stacked>cpf*</ion-label>
-        <ion-input name="cpf" type="text"></ion-input>
+        <ion-input formControlName="cpf" type="text" pattern=".{10,11}[0-9]+$" maxlength="11"></ion-input>
       </ion-item>
       <ion-item>
           <ion-label stacked>Email*</ion-label>
-          <ion-input name="email" type="text"></ion-input>
+          <ion-input formControlName="email" type="text"></ion-input>
         </ion-item>
-      <ion-list radio-group name = "pessoaResponsavel">
+      <ion-list radio-group formControlName = "pessoaResponsavel">
         <ion-list-header>
-          Responsável de Aluno(a)?
+          Responsável de Aluno(a)?*
         </ion-list-header>
         <ion-item>
           <ion-label>Sim</ion-label>
@@ -37,24 +37,24 @@
         </ion-item>
       </ion-list>
       <ion-item>
-        <ion-label stacked>Data de Nascimento</ion-label>
-        <ion-input name="dataNascimento" type="Data"></ion-input>
+        <ion-label stacked>Data de Nascimento*</ion-label>
+        <ion-datetime formControlName="dataNascimento" type="Data" displayFormat="DD MM YYYY"></ion-datetime>
       </ion-item>
       <ion-item>
         <ion-label stacked>Recado</ion-label>
-        <ion-input name="observacao" type="text"></ion-input>
+        <ion-input formControlName="observacao" type="text"></ion-input>
         <ion-item>
           <ion-label stacked>Celular*</ion-label>
-          <ion-input name="celular" type="text"></ion-input>
+          <ion-input formControlName="celular" type="text"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label stacked>Celular 2</ion-label>
-          <ion-input name="celular" type="text"></ion-input>
+          <ion-input formControlName="celular2" type="text"></ion-input>
         </ion-item>
       </ion-item>
       <ion-item>
-          <ion-label stacked>senha</ion-label>
-          <ion-input name="senha" type="password"></ion-input>
+          <ion-label stacked>senha*</ion-label>
+          <ion-input formControlName="senha" type="password"></ion-input>
       </ion-item>
       <button ion-button block type = "submit">Criar Conta</button>
   </form>
