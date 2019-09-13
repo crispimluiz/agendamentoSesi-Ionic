@@ -13,10 +13,13 @@ import { authService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { TurmaService } from '../services/domain/turma.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
+import { AlterarCadastroComponent } from '../components/alterar-cadastro/alterar-cadastro';
+import { atualizarCadastroService } from '../services/domain/alterarCadastro.service';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    AlterarCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    AlterarCadastroComponent
   ],
   providers: [
     StatusBar,
@@ -38,7 +42,8 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
     authService,
     StorageService,
     TurmaService,
-    PessoaService
+    PessoaService,
+    atualizarCadastroService
   ]
 })
 export class AppModule {}

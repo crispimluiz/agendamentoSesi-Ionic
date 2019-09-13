@@ -6,19 +6,24 @@
 
 <ion-content padding>
     <div class = "imagemLogo">
-        <img src="assets/imgs/logo.png">
-      </div>
+      <img src="assets/imgs/logo.png">
+    </div>
   <h3 style="color:red; text-align: center;"><strong>Bem vindo ao Sistema de ensino Sesi</strong></h3>
 
   <form class = "botoes">
-    <ion-item>
-      <ion-label>CPF</ion-label>
-        <ion-input [(ngModel)]  = "creds.cpf" name = cpf type="text"></ion-input>
-    </ion-item>
   <div>
     <ion-item>
-        <ion-label>Senha</ion-label>
-          <ion-input [(ngModel)]  = "creds.senha" name = senha type = "password"></ion-input>
+    <ion-label style="color:blue">CPF</ion-label>
+      <ion-input [(ngModel)]  = "creds.cpf" name = cpf type="text" placeholder="Coloque o CPF"
+      pattern=".{10,11}[0-9]+$" maxlength="11"></ion-input>
+    </ion-item>
+  </div>
+
+  <div>
+    <ion-item>
+        <ion-label style="color:red">Senha</ion-label>
+          <ion-input [(ngModel)]  = "creds.senha" name = senha type = "password" placeholder="Digite a Senha o CPF">
+          </ion-input>
       </ion-item>
 
       <button ion-button (click)="login()">Entrar</button>
@@ -32,7 +37,7 @@
   <ion-footer>
       <ion-toolbar>
         <ion-title>
-            Desenvolvido com <ion-icon name="heart" ></ion-icon> por <strong> Tecnologia Senai</strong>
+            Desenvolvido com <ion-icon style = "color: red" name="heart" ></ion-icon> por <strong> Tecnologia Senai</strong>
         </ion-title>
       </ion-toolbar>
     </ion-footer>

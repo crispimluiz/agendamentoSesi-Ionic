@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { PessoaService } from '../../services/domain/pessoa.service';
 import { StorageService } from '../../services/storage.service';
 import { PessoaDTO } from '../../models/pessoa.dto';
+import { AlterarCadastroComponent } from '../../components/alterar-cadastro/alterar-cadastro';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,8 @@ export class PessoaPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public pessoaService: PessoaService,
-    public storage: StorageService) {
+    public storage: StorageService,
+    public modal: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -35,6 +37,15 @@ export class PessoaPage {
     else{
       this.navCtrl.setRoot('HomePage');
     }
+  }
+
+  editar(){
+    const AlterarCadastroModal = this.modal.create(AlterarCadastroComponent);
+    AlterarCadastroModal.present();
+  }
+
+  atualizarCadastro(){
+    this.navCtrl.push('AtualizarCadastroPage');
   }
 
 }
