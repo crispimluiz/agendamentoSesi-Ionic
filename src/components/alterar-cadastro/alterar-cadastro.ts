@@ -5,6 +5,7 @@ import { PessoaService } from '../../services/domain/pessoa.service';
 import { StorageService } from '../../services/storage.service';
 import { ViewController } from 'ionic-angular/navigation/view-controller';
 import { FormGroup, Validators,  FormBuilder } from '@angular/forms';
+import { atualizarCadastroService } from '../../services/domain/alterarCadastro.service';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class AlterarCadastroComponent {
   text: string;
 
   pessoa: PessoaDTO;
+  toastCtrl: any;
 
 
   constructor(public navCtrl: NavController,
@@ -26,7 +28,8 @@ export class AlterarCadastroComponent {
     public formBuilder: FormBuilder,
     public storage: StorageService,
     public modal: ModalController,
-    public view: ViewController) {
+    public view: ViewController,
+    public AtualizarCadastroService: atualizarCadastroService) {
 
   this.formGroup = this.formBuilder.group({
     nome:['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
@@ -45,7 +48,5 @@ export class AlterarCadastroComponent {
     this.view.dismiss();
   }
 
-  alterarUser(){
-    console.log(this.formGroup.value)
-  }
+
 }

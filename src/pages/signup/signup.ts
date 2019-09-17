@@ -21,6 +21,7 @@ export class SignupPage {
     public alertCrtl: AlertController) {
 
       this.formGroup = this.formBuilder.group({
+        id: null,
         nome:['', [Validators.required, Validators.minLength(5), Validators.maxLength(120)]],
         cpf:['', [Validators.required, Validators.minLength(11), Validators.maxLength(14)]],
         email:['', [Validators.required, Validators.email]],

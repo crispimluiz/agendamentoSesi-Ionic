@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Agendamento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Selecione um horário
+    </ion-list-header>
+    <button ion-item *ngFor="let item of items">
+      <h2>{{ item.dataAgendamento }}, {{ item.periodoAtendimento }}</h2>
+    </button>
+  </ion-list>
+</ion-content>

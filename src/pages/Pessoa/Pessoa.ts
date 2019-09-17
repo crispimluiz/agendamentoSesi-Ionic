@@ -48,4 +48,8 @@ export class PessoaPage {
     this.navCtrl.push('AtualizarCadastroPage');
   }
 
+  agendamento(){
+    this.navCtrl.push('AgendamentoPage');
+  }
+
 }

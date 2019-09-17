@@ -68,8 +68,8 @@
             <ion-input formControlName="senha" type="password"></ion-input>
         </ion-item>
   <p class = "danger" *ngIf = "formGroup.controls.senha.dirty && formGroup.controls.senha.errors" margin-left>Valor Inválido</p>
-  <button ion-button block type="submit" [disabled]="formGroup.invalid"
-    >Criar conta</button>
+  <button ion-button color="secondary" block type="submit" [disabled]="formGroup.invalid"
+    >Atualizar Cadastro</button>
     </form>
 
   </ion-content>

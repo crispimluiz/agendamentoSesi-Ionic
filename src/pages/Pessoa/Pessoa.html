@@ -8,7 +8,9 @@
 </ion-header>
 
 <ion-content padding>
-
+    <div class = "imagemLogo">
+      <img src="assets/imgs/Topo-Pagina-Todos.png">
+    </div>
 <ion-item>
     <label style=" font-family:Georgia, serif; text-align: center; font-size: 40px; color: red" >Dados Cadastrais</label>
 </ion-item>
@@ -39,6 +41,9 @@
   <p text-center class = "p" >{{pessoa?.celular2}}</p>
 </ion-item>
 
-<button ion-button (click)="editar()">Atualizar</button>
+<button ion-button color="secondary" (click)="agendamento()">Agendar Horário</button>
+<label class = "aviso">Nossas informações vem do cadastro da escola e do cadastro no site(s):</label>
+
+<!--<button ion-button color="secondary" (click)="editar()">Atualizar</button>-->
 
 </ion-content>

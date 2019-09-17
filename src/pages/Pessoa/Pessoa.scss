@@ -3,7 +3,29 @@ page-pessoa {
     color: red;
   }
   .p{
+    text-align:center;
+
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
+  }
+  .label{
+    text-align: center;
+    font-size: 20px;
+  }
+  .imagemLogo{
+    margin-top: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width:400px;
+    max-height:250px;
+  }
+  .aviso{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: blue;
+    font-size: 20px;
   }
 }
