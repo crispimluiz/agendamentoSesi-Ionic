@@ -1,5 +1,5 @@
 import { DateTimeData } from "ionic-angular/umd/util/datetime-util";
-import { AgendamentoDTO } from "./agendamento.dto";
+import { TimesDTO } from "./Times.dto";
 
 export interface PessoaDTO{
   id : string,
@@ -13,6 +13,6 @@ export interface PessoaDTO{
   celular : string,
   celular2 : string,
   celular3 : string,
-  agendamento? : AgendamentoDTO
+  timesDTO? : TimesDTO
 
 }

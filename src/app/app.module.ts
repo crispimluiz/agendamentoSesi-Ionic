@@ -13,13 +13,11 @@ import { authService } from '../services/auth.service';
 import { StorageService } from '../services/storage.service';
 import { TurmaService } from '../services/domain/turma.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
-import { AlterarCadastroComponent } from '../components/alterar-cadastro/alterar-cadastro';
-import { atualizarCadastroService } from '../services/domain/alterarCadastro.service';
+import { AgendamentoService } from '../services/domain/agendamento.service';
 
 @NgModule({
   declarations: [
-    MyApp,
-    AlterarCadastroComponent
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -29,8 +27,7 @@ import { atualizarCadastroService } from '../services/domain/alterarCadastro.ser
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    AlterarCadastroComponent
+    MyApp
   ],
   providers: [
     StatusBar,
@@ -42,8 +39,7 @@ import { atualizarCadastroService } from '../services/domain/alterarCadastro.ser
     authService,
     StorageService,
     TurmaService,
-    PessoaService,
-    atualizarCadastroService
+    AgendamentoService
   ]
 })
 export class AppModule {}

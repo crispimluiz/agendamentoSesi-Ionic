@@ -25,8 +25,11 @@ export class ErrorInterceptor implements HttpInterceptor {
             console.log(errorObj);
 
             switch(errorObj.status) {
+                case 401:
+                  this.handle401();
+                  break;
                 case 403:
-                this.handle403();
+                  this.handle403();
                 break;
             }
 
@@ -36,6 +39,17 @@ export class ErrorInterceptor implements HttpInterceptor {
 
     handle403() {
         this.storage.setLocalUser(null);
+    }
+    handle401(){
+      let alert = this.alertCtrl.create({
+        title:'Erro 401: falha de autenticação',
+        message:'CPF ou Senha incorretos',
+        enableBackdropDismiss: false,
+        buttons:[
+          {text: 'ok'}
+        ]
+      });
+      alert.present();
     }
 }
 

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AgendamentoDTO } from '../../models/agendamento.dto';
+import { TimesDTO } from '../../models/Times.dto';
+import { StorageService } from '../../services/storage.service';
+import { AgendamentoService } from '../../services/domain/agendamento.service';
 
 @IonicPage()
 @Component({
@@ -9,13 +11,22 @@ import { AgendamentoDTO } from '../../models/agendamento.dto';
 })
 export class AgendamentoPage {
 
- items: AgendamentoDTO[];
+items: TimesDTO[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public storage: StorageService,
+    public agendamentoService: AgendamentoService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AgendamentoPage');
+    this.agendamentoService.findAll()
+      .subscribe(response => {
+        this.items = response;
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }
