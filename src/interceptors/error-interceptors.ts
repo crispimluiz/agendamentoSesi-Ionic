@@ -31,6 +31,9 @@ export class ErrorInterceptor implements HttpInterceptor {
                 case 403:
                   this.handle403();
                 break;
+
+                default:
+                  this.handleDefaulterror(errorObj);
             }
 
             return Observable.throw(errorObj);
@@ -44,6 +47,18 @@ export class ErrorInterceptor implements HttpInterceptor {
       let alert = this.alertCtrl.create({
         title:'Erro 401: falha de autenticação',
         message:'CPF ou Senha incorretos',
+        enableBackdropDismiss: false,
+        buttons:[
+          {text: 'ok'}
+        ]
+      });
+      alert.present();
+    }
+
+    handleDefaulterror(errorObj){
+      let alert = this.alertCtrl.create({
+        title:'Erro ' + errorObj.status + ': '+ errorObj.error,
+        message: errorObj.message,
         enableBackdropDismiss: false,
         buttons:[
           {text: 'ok'}
