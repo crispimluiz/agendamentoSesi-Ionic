@@ -24,6 +24,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: 'HomePage' },
       { title: 'Usuário', component: 'PessoaPage' },
+      { title: 'Criar Agenda', component: 'CriarAgendaPage'},
+      { title: 'Escolher Agenda', component: 'EscolhaAgendaPage'},
+      { title: 'Intervalo Agenda', component: 'IntervaloAgendaPage'},
       { title: 'Turma', component: 'TurmaPage' },
       { title: 'Logout', component: '' }
     ];

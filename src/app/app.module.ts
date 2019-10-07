@@ -14,6 +14,8 @@ import { StorageService } from '../services/storage.service';
 import { TurmaService } from '../services/domain/turma.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
 import { AgendamentoService } from '../services/domain/agendamento.service';
+import { CriarAgendaService } from '../services/domain/criarAgenda.service';
+import { EscolhaAgendaService } from '../services/domain/escolhaAgedna.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { AgendamentoService } from '../services/domain/agendamento.service';
     authService,
     StorageService,
     TurmaService,
-    AgendamentoService
+    AgendamentoService,
+    CriarAgendaService,
+    EscolhaAgendaService
   ]
 })
 export class AppModule {}

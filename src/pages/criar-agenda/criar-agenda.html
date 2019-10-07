@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Criar Agenda</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div class = "imagemLogo">
+        <img src="assets/imgs/Logo.png">
+    </div>
+    <form class = "dataAgenda" [formGroup]="formGroup" (ngSubmit)="criarAgenda(); $event.preventDefault()">
+        <ion-item>
+            <ion-label style= "color: blue; font-size: 20px" stacked>Coloque a Descrição do Perido*</ion-label>
+            <ion-input formControlName="description" type="text" placeholder="Descrição do Periodo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style= "color: blue; font-size: 20px" stacked>Coloque a Data Inicial*</ion-label>
+            <ion-input formControlName="startDate" type="date" placeholder="Início do Periodo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label style= "color: blue; font-size: 20px" stacked>Coloque a Data Final*</ion-label>
+            <ion-input formControlName="endDate" type="date" placeholder="Fim do Periodo"></ion-input>
+        </ion-item>
+
+
+
+    <button ion-button block type="submit">Criar Agenda</button>
+  </form>
+  <div class ="rodape">
+      <ion-footer>
+          <ion-toolbar>
+            <ion-title>
+                Desenvolvido com <ion-icon style = "color: red" name="heart" ></ion-icon> por <strong> Tecnologia Senai</strong>
+            </ion-title>
+          </ion-toolbar>
+        </ion-footer>
+      </div>
+</ion-content>

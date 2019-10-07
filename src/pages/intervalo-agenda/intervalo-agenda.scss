@@ -1,0 +1,25 @@
+page-intervalo-agenda {
+  #tema{
+    color: red;
+    text-align: center;
+  }
+  #diaSemana{
+    color: blue; font-size: 20px; text-align: center;
+  }
+  #selecaoDia{
+    color: blue; font-size: 20px; text-align: center; border: 1px;
+  }
+  #intervalo{
+    color: gray; text-align: center;
+  }
+
+  #intervaloText{
+    font-size: 20px; color: cadetblue;
+  }
+  #IntervaloHora{
+    width:35px; font-size: 13px;
+  }
+  #IntervaloMinuto{
+    width:35px; font-size: 13px;
+  }
+}
