@@ -16,6 +16,7 @@ import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
 import { AgendamentoService } from '../services/domain/agendamento.service';
 import { CriarAgendaService } from '../services/domain/criarAgenda.service';
 import { EscolhaAgendaService } from '../services/domain/escolhaAgedna.service';
+import { IntervaloAgendaService } from '../services/domain/IntervaloAgenda.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { EscolhaAgendaService } from '../services/domain/escolhaAgedna.service';
     TurmaService,
     AgendamentoService,
     CriarAgendaService,
-    EscolhaAgendaService
+    EscolhaAgendaService,
+    IntervaloAgendaService
   ]
 })
 export class AppModule {}

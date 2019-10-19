@@ -31,6 +31,14 @@ export class HomePage {
     this.menu.swipeEnable(true);
   }
 
+  ionViewDidEnter(){
+    this.auth.refresToken()
+    .subscribe(response => {
+      this.auth.sucessfullLogin(response.headers.get('Authorization'));
+      this.navCtrl.setRoot('PessoaPage');
+    },
+    error => {} );
+  }
 
   login() {
     this.auth.authenticate(this.creds)

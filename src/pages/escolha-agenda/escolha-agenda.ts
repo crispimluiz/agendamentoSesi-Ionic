@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Agenda } from '../../models/Agenda.dto';
 import { EscolhaAgendaService } from '../../services/domain/escolhaAgedna.service';
+import { CriarAgendaService } from '../../services/domain/criarAgenda.service';
 
 
 @IonicPage()
@@ -12,25 +13,25 @@ import { EscolhaAgendaService } from '../../services/domain/escolhaAgedna.servic
 export class EscolhaAgendaPage {
 
 
-  item : Agenda[];
+  agendas : Agenda[];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public escolhaAgendaService : EscolhaAgendaService) {
+    public escolhaAgendaService : EscolhaAgendaService,
+    public criarAgendaService: CriarAgendaService) {
   }
 
   findAllAgenda(){
-    this.escolhaAgendaService.findAllAgenda();
+    this.escolhaAgendaService.findAll();
   }
 
   ionViewDidLoad() {
-    this.escolhaAgendaService.findAllAgenda()
-      .subscribe(reponse => {
-        this.item = reponse;
-      },
-      error => {
-        console.log(error);
-      });
+    this.criarAgendaService.findAll()
+    .subscribe(response =>{
+      this.agendas = response;
+
+    },
+    error => {});
   }
 
 }

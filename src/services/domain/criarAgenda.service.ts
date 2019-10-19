@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { API_CONFIG } from "../../config/api.config";
 import { StorageService } from "../storage.service";
 import { Agenda } from "../../models/Agenda.dto";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class CriarAgendaService{
@@ -13,7 +14,7 @@ export class CriarAgendaService{
 
   insert (obj : Agenda){
     return this.http.post(
-      `${API_CONFIG.baseUrl}/agenda/gerarhorarios`,
+      `${API_CONFIG.baseUrl}/agenda/`,
       obj,
       {
         observe: 'response',
@@ -23,9 +24,9 @@ export class CriarAgendaService{
   }
 
 
-/*
-  findAll() : Observable<AgendaIntervalo[]>{
-    return this.http.get<AgendaIntervalo[]>(`${API_CONFIG.baseUrl}/agenda`);
+
+  findAll() : Observable<Agenda[]>{
+    return this.http.get<Agenda[]>(`${API_CONFIG.baseUrl}/agenda/`);
   }
-  */
+
 }

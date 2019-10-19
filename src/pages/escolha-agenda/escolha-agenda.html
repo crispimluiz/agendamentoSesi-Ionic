@@ -9,20 +9,16 @@
 
 <ion-content padding>
     <ion-label style= "color: blue; font-size: 20px; text-align: center" stacked>Escolher uma Agenda*</ion-label>
-    <div id="buscaAgenda">
-      <img src="../../assets/imgs/buscar.png" alt="Buscar..."/>
-      <input type="text" id="txtBusca" placeholder="Buscar..."/>
-      <button id="btnBusca" (click)="findAllAgenda()">Buscar</button>
-  </div>
-    <!--NO service criei o listar. Aqui data table seria interessante? -->
+
+
     <div>
-      <ion-list>
-        <ion-list ion-item *ngFor="let items of item">
-          <ion-thumbnail item-start>
-            <img src = "assets/imgs/escolaSesi.jpg">
-          </ion-thumbnail>
-          <h2>{{items.description}}</h2>
-        </ion-list>
-      </ion-list>
+        <ion-item>
+          <ion-label>Agenda</ion-label>
+            <ion-select formControlName="Agenda">
+              <ion-option *ngFor="let agendaItem of agendas;">
+                {{agendaItem.description}}
+              </ion-option>
+            </ion-select>
+          </ion-item>
     </div>
 </ion-content>

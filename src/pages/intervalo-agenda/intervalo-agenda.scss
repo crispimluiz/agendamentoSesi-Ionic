@@ -6,14 +6,18 @@ page-intervalo-agenda {
   #diaSemana{
     color: blue; font-size: 20px; text-align: center;
   }
-  #selecaoDia{
+  #day{
     color: blue; font-size: 20px; text-align: center; border: 1px;
   }
   #intervalo{
     color: gray; text-align: center;
   }
 
-  #intervaloText{
+  #startMillisecond{
+    font-size: 20px; color: cadetblue;
+  }
+
+  #endMillisecond{
     font-size: 20px; color: cadetblue;
   }
   #IntervaloHora{

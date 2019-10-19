@@ -25,7 +25,7 @@ export class CriarAgendaPage {
         id: null,
         description:['', [Validators.required]],
         startDate:['', [Validators.required]],
-        endDate:['', [Validators.required, Validators.email]],
+        endDate:['', [Validators.required]],
       });
     }
   criarAgenda(){
@@ -33,7 +33,7 @@ export class CriarAgendaPage {
       .subscribe(response => {
         this.showInsertOk();
       },
-      error => {"Houve Erro no Cadastro Pessoa"});
+      error => {"Houve erro ao Criar Agenda"});
   }
   showInsertOk(){
     let alert = this.alertCrtl.create({
@@ -44,7 +44,7 @@ export class CriarAgendaPage {
         {
           text:'Ok',
           handler:() =>{
-            this.navCtrl.pop();
+            this.navCtrl.setRoot('PessoaPage');
           }
         }
       ]
@@ -53,7 +53,7 @@ export class CriarAgendaPage {
   }
 
   ionViewDidLoad()  {
-
+    console.log('ionViewDidLoad CriarAgendaPage');
 }
 
 

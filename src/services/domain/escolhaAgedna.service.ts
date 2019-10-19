@@ -9,7 +9,7 @@ export class EscolhaAgendaService{
   constructor(public http: HttpClient){
   }
 
-  findAllAgenda() : Observable<Agenda[]>{
+  findAll() : Observable<Agenda[]>{
     return this.http.get<Agenda[]>(`${API_CONFIG.baseUrl}/agenda`);
   }
 }
