@@ -8,17 +8,10 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-label style= "color: blue; font-size: 20px; text-align: center" stacked>Escolher uma Agenda*</ion-label>
-
-
-    <div>
-        <ion-item>
-          <ion-label>Agenda</ion-label>
-            <ion-select formControlName="Agenda">
-              <ion-option *ngFor="let agendaItem of agendas;">
-                {{agendaItem.description}}
-              </ion-option>
-            </ion-select>
-          </ion-item>
-    </div>
+<!-- <ion-label style= "color: blue; font-size: 20px; text-align: center" stacked>Escolher uma Agenda*</ion-label>-->
+       <ion-list>
+          <button ion-item *ngFor="let agendaItem of agendas;">
+                   <H2>{{agendaItem.description}}</H2>
+          </button>
+        </ion-list>
 </ion-content>

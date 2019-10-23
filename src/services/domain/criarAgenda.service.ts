@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { API_CONFIG } from "../../config/api.config";
 import { StorageService } from "../storage.service";
-import { Agenda } from "../../models/Agenda.dto";
+import { AgendaDTO } from "../../models/Agenda.dto";
 import { Observable } from "rxjs";
 
 @Injectable()
@@ -12,7 +12,7 @@ export class CriarAgendaService{
 
   }
 
-  insert (obj : Agenda){
+  insert (obj : AgendaDTO){
     return this.http.post(
       `${API_CONFIG.baseUrl}/agenda/`,
       obj,
@@ -25,8 +25,8 @@ export class CriarAgendaService{
 
 
 
-  findAll() : Observable<Agenda[]>{
-    return this.http.get<Agenda[]>(`${API_CONFIG.baseUrl}/agenda/`);
+  findAll() : Observable<AgendaDTO[]>{
+    return this.http.get<AgendaDTO[]>(`${API_CONFIG.baseUrl}/agenda/`);
   }
 
 }

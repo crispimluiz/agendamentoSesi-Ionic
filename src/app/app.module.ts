@@ -15,7 +15,7 @@ import { TurmaService } from '../services/domain/turma.service';
 import { AuthInterceptorProvider } from '../interceptors/auth-interceptors';
 import { AgendamentoService } from '../services/domain/agendamento.service';
 import { CriarAgendaService } from '../services/domain/criarAgenda.service';
-import { EscolhaAgendaService } from '../services/domain/escolhaAgedna.service';
+import { EscolhaAgendaService } from '../services/domain/escolhaAgenda.service';
 import { IntervaloAgendaService } from '../services/domain/IntervaloAgenda.service';
 
 @NgModule({

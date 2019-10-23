@@ -1,9 +1,6 @@
-import { AgendaIntervalo } from "./AgendaIntervalo.dto";
-
-export interface Agenda{
+export interface AgendaDTO{
   id : string,
   description: String,
   startDate: Date,
-  endDate: Date,
-  agendaIntervalo?: AgendaIntervalo[]
+  endDate: Date
 }
