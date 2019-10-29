@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CriarAgendaService } from '../../services/domain/criarAgenda.service';
-import { Agenda } from '../../models/Agenda.dto';
+import { AgendaDTO } from '../../models/Agenda.dto';
 
 @IonicPage()
 @Component({
@@ -12,7 +12,7 @@ import { Agenda } from '../../models/Agenda.dto';
 
 export class CriarAgendaPage {
   formGroup: FormGroup;
-  agenda : Agenda[];
+  agenda : AgendaDTO[];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,

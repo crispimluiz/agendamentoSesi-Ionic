@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { Agenda } from '../../models/Agenda.dto';
+import { AgendaDTO } from '../../models/Agenda.dto';
 import { StorageService } from '../../services/storage.service';
 import { AgendamentoService } from '../../services/domain/agendamento.service';
 
@@ -11,7 +11,7 @@ import { AgendamentoService } from '../../services/domain/agendamento.service';
 })
 export class AgendamentoPage {
 
-  agenda: Agenda[];
+  agenda: AgendaDTO[];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { StorageService } from "../storage.service";
 import { Observable } from "rxjs/Rx";
-import { Agenda } from "../../models/Agenda.dto";
+import { AgendaDTO } from "../../models/Agenda.dto";
 import { API_CONFIG } from "../../config/api.config";
 
 @Injectable()
@@ -11,7 +11,7 @@ export class AgendamentoService{
     public storage: StorageService){
   }
 
-  findAll() : Observable<Agenda[]>{
-    return this.http.get<Agenda[]>(`${API_CONFIG.baseUrl}/agenda`);
+  findAll() : Observable<AgendaDTO[]>{
+    return this.http.get<AgendaDTO[]>(`${API_CONFIG.baseUrl}/agenda`);
   }
 }

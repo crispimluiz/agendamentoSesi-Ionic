@@ -1,4 +1,4 @@
-export interface AgendaIntervalo{
+export interface AgendaIntervaloDTO{
   id : string,
   day: Date,
   startMillisecond: Date,

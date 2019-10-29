@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { StorageService } from '../../services/storage.service';
-import { AgendaIntervalo } from '../../models/AgendaIntervalo.dto';
+import { AgendaIntervaloDTO } from '../../models/AgendaIntervalo.dto';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IntervaloAgendaService } from '../../services/domain/IntervaloAgenda.service';
+import { AgendaDTO } from '../../models/Agenda.dto';
 
 @IonicPage()
 @Component({
@@ -12,9 +13,9 @@ import { IntervaloAgendaService } from '../../services/domain/IntervaloAgenda.se
 })
 export class IntervaloAgendaPage {
 
+  agenda : AgendaDTO[];
   formGroup: FormGroup;
-
-  agendaIntervalo: AgendaIntervalo[];
+  agendaIntervalo: AgendaIntervaloDTO[];
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,12 +27,12 @@ export class IntervaloAgendaPage {
       this.formGroup = this.formBuilder.group({
         id: null,
         day:['', Validators.required],
-        startMillisecond: [''],
-        endMillisecond: ['']
+        startMillisecond: ['',Validators.required],
+        endMillisecond: ['', Validators.required]
       });
   }
 
-  inserirIntervalo(){
+  gerarHorarios(){
       this.intervaloAgendaService.insert(this.formGroup.value)
       .subscribe(response => {
         this.showInsertOk();

@@ -1,4 +1,4 @@
-export interface AgendaDTO{
+export interface AgendaDTO {
   id : string,
   description: String,
   startDate: Date,

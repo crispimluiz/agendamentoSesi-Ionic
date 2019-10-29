@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Agenda } from '../../models/Agenda.dto';
+import { AgendaDTO } from '../../models/Agenda.dto';
 import { EscolhaAgendaService } from '../../services/domain/escolhaAgenda.service';
 import { CriarAgendaService } from '../../services/domain/criarAgenda.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -12,7 +12,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class EscolhaAgendaPage {
 
 
-  agendas : Agenda[];
+  agendas : AgendaDTO[];
   formGroup: FormGroup;
 
   constructor(public navCtrl: NavController,
@@ -28,10 +28,6 @@ export class EscolhaAgendaPage {
       });
     }
 
-  findAll(){
-    this.escolhaAgendaService.findAll();
-  }
-
   ionViewDidLoad() {
     this.escolhaAgendaService.findAll()
     .subscribe(response =>{
@@ -40,4 +36,7 @@ export class EscolhaAgendaPage {
     error => {});
   }
 
+  showAgendaIntervalo(){
+    this.navCtrl.push('IntervaloAgendaPage')
+  }
 }

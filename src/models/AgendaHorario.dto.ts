@@ -1,4 +1,4 @@
-export interface AgendaHorario{
+export interface AgendaHorarioDTO{
   start: Date,
   end: Date
 }

@@ -1,7 +1,7 @@
 
 import { HttpClient } from "@angular/common/http";
 import { StorageService } from "../storage.service";
-import { AgendaIntervalo } from "../../models/AgendaIntervalo.dto";
+import { AgendaIntervaloDTO } from "../../models/AgendaIntervalo.dto";
 import { API_CONFIG } from "../../config/api.config";
 import { Injectable } from "@angular/core";
 
@@ -9,10 +9,14 @@ import { Injectable } from "@angular/core";
 export class IntervaloAgendaService{
   constructor(public http: HttpClient,
     public storage: StorageService){
-
   }
 
-  insert (obj : AgendaIntervalo){
+
+  receberAgenda(agenda_id: string){
+    return this.http.get(`${API_CONFIG.baseUrl}/agenda/?`)
+  }
+
+  insert (obj : AgendaIntervaloDTO){
     return this.http.post(
       `${API_CONFIG.baseUrl}/agenda`,
       obj,
