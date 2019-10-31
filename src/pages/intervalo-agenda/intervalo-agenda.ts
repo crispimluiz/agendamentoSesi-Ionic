@@ -13,7 +13,7 @@ import { AgendaDTO } from '../../models/Agenda.dto';
 })
 export class IntervaloAgendaPage {
 
-  agenda : AgendaDTO[];
+  agendaId : string;
   formGroup: FormGroup;
   agendaIntervalo: AgendaIntervaloDTO[];
 
@@ -24,6 +24,10 @@ export class IntervaloAgendaPage {
     public modal: ModalController,
     public alertCrtl: AlertController,
     public intervaloAgendaService: IntervaloAgendaService) {
+
+      this.agendaId = this.navParams.get('agendaId');
+      console.log(this.agendaId);
+
       this.formGroup = this.formBuilder.group({
         id: null,
         day:['', Validators.required],

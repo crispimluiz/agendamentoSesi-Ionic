@@ -18,7 +18,7 @@ export class IntervaloAgendaService{
 
   insert (obj : AgendaIntervaloDTO){
     return this.http.post(
-      `${API_CONFIG.baseUrl}/agenda`,
+      `${API_CONFIG.baseUrl}/intervalos`,
       obj,
       {
         observe: 'response',

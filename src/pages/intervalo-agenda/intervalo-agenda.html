@@ -10,20 +10,21 @@
 <ion-content padding>
     <form class = "intervalo" [formGroup]="formGroup" (ngSubmit)="gerarHorarios(); $event.preventDefault()">
   <h2 id=tema>Tema Escolhido*</h2>
-  <ion-input ></ion-input>
+  <ion-input >{{agendaId}}</ion-input>
+  <ion-input >{{agendaIntervalo}}</ion-input>
   <div class="row">
       <div class="col">
         <h2 id = diaSemana stacked>Dia da Semana: </h2>
       </div>
       <div class="col">
         <select id=day>
-          <option value="0">Segunda</option>
-          <option value="1">terça</option>
-          <option value="2">Quarta</option>
-          <option value="3">Quinta</option>
-          <option value="4">Sexta</option>
-          <option value="5">sabado</option>
-          <option value="6">Domingo</option>
+          <option value="Monday">Segunda</option>
+          <option value="Tuesday">terça</option>
+          <option value="Wednesday">Quarta</option>
+          <option value="Thursday">Quinta</option>
+          <option value="Friday">Sexta</option>
+          <option value="Saturday">sabado</option>
+          <option value="Sunday">Domingo</option>
         </select>
       </div>
   </div>

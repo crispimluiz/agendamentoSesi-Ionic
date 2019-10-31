@@ -36,7 +36,7 @@ export class EscolhaAgendaPage {
     error => {});
   }
 
-  showAgendaIntervalo(){
-    this.navCtrl.push('IntervaloAgendaPage')
+  showAgendaIntervalo(id : string){
+    this.navCtrl.push('IntervaloAgendaPage', {agendaId : id})
   }
 }
