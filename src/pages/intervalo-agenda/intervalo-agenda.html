@@ -8,102 +8,101 @@
 </ion-header>
 
 <ion-content padding>
-    <form class = "intervalo" [formGroup]="formGroup" (ngSubmit)="gerarHorarios(); $event.preventDefault()">
-  <h2 id=tema>Tema Escolhido*</h2>
-  <ion-input >{{agendaId}}</ion-input>
-  <ion-input >{{agendaIntervalo}}</ion-input>
+    <form class = "intervalo" [formGroup]="formGroup" (ngSubmit)="inseririntervalos(); $event.preventDefault()">
+  <h2 id=tema>Horários dos Interválos*</h2>
+
   <div class="row">
+
       <div class="col">
-        <h2 id = diaSemana stacked>Dia da Semana: </h2>
-      </div>
-      <div class="col">
+        <p id = entries stacked>Dia da Semana:</p>
         <select id=day>
-          <option value="Monday">Segunda</option>
-          <option value="Tuesday">terça</option>
-          <option value="Wednesday">Quarta</option>
-          <option value="Thursday">Quinta</option>
-          <option value="Friday">Sexta</option>
-          <option value="Saturday">sabado</option>
-          <option value="Sunday">Domingo</option>
+          <option value="MONDAY">Segunda</option>
+          <option value="TUESDAY">terça</option>
+          <option value="WEDNESDAY">Quarta</option>
+          <option value="THURSDAY">Quinta</option>
+          <option value="FRIDAY">Sexta</option>
+          <option value="SATURDAY">sabado</option>
+          <option value="SUNDAY">Domingo</option>
         </select>
+
       </div>
   </div>
 
   <h3 id="intervalo">Intervalor Início e Intervalor Fim</h3>
     <div class="row">
-        <div class="col" id= "startMillisecond">Início</div>
+        <div class="col" id= "startMillisecond1">Início</div>
 
         <div class="col">
-            <input type="text" id="startHour" placeholder="Hora..."/>
+            <input type="text" id="startHour1" placeholder="Hora..."/>
         </div>
         <div class="col">
-            <input type="text" id="startMinute" placeholder="Minuto..."/>
+            <input type="text" id="startMinute1" placeholder="Minuto..."/>
         </div>
 
-        <div class="col" id= "endMillisecond">Final</div>
+        <div class="col" id= "endMillisecond1">Final</div>
 
         <div class="col">
-            <input type="text" id="endHour" placeholder="Hora..."/>
+            <input type="text" id="endHour1" placeholder="Hora..."/>
         </div>
         <div class="col">
-            <input type="text" id="endMinute" placeholder="Minuto..."/>
+            <input type="text" id="endMinute1" placeholder="Minuto..."/>
         </div>
     </div>
     <div class="row">
-      <div class="col" id= "startMillisecond">Início</div>
+      <div class="col" id= "startMillisecond2">Início</div>
 
       <div class="col">
-          <input type="text" id="startHour" placeholder="Hora..."/>
+          <input type="text" id="startHour2" placeholder="Hora..."/>
       </div>
       <div class="col">
-          <input type="text" id="startMinute" placeholder="Minuto..."/>
+          <input type="text" id="startMinute2" placeholder="Minuto..."/>
       </div>
 
-      <div class="col" id= "endMillisecond">Final</div>
+      <div class="col" id= "endMillisecond2">Final</div>
 
       <div class="col">
-          <input type="text" id="endHour" placeholder="Hora..."/>
+          <input type="text" id="endHour2" placeholder="Hora..."/>
       </div>
       <div class="col">
-          <input type="text" id="endMinute" placeholder="Minuto..."/>
+          <input type="text" id="endMinute2" placeholder="Minuto..."/>
       </div>
     </div>
     <div class="row">
-      <div class="col" id= "startMillisecond">Início</div>
+      <div class="col" id= "startMillisecond3">Início</div>
 
       <div class="col">
-          <input type="text" id="startHour" placeholder="Hora..."/>
+          <input type="text" id="startHour3" placeholder="Hora..."/>
       </div>
       <div class="col">
-          <input type="text" id="startMinute" placeholder="Minuto..."/>
+          <input type="text" id="startMinute3" placeholder="Minuto..."/>
       </div>
 
-      <div class="col" id= "endMillisecond">Final</div>
+      <div class="col" id= "endMillisecond3">Final</div>
 
       <div class="col">
-          <input type="text" id="endHour" placeholder="Hora..."/>
+          <input type="text" id="endHour3" placeholder="Hora..."/>
       </div>
       <div class="col">
-          <input type="text" id="endMinute" placeholder="Minuto..."/>
+          <input type="text" id="endMinute3" placeholder="Minuto..."/>
       </div>
     </div>
     <div class="row">
-      <div class="col" id= "startMillisecond">Início</div>
+      <div class="col" id= "startMillisecond4">Início</div>
 
       <div class="col">
-          <input type="text" id="startHour" placeholder="Hora..."/>
+          <input type="text" id="startHour4" placeholder="Hora..."/>
       </div>
       <div class="col">
-          <input type="text" id="startMinute" placeholder="Minuto..."/>
+          <input type="text" id="startMinute4" placeholder="Minuto..."/>
       </div>
 
-      <div class="col" id= "endMillisecond">Final</div>
+      <div class="col" id= "endMillisecond4">Final</div>
 
       <div class="col">
-          <input type="text" id="endHour" placeholder="Hora..."/>
+          <input type="text" id="endHour4" placeholder="Hora..."/>
       </div>
       <div class="col">
-          <input type="text" id="endMinute" placeholder="Minuto..."/>
+          <input type="text" id="endMinute4" placeholder="Minuto..."/>
       </div>
     </div>
     <button ion-button block type="submit">Criar Intervalo</button>

@@ -13,7 +13,8 @@ import { AgendaDTO } from '../../models/Agenda.dto';
 })
 export class IntervaloAgendaPage {
 
-  agendaId : string;
+  agendaId : number;
+  item: AgendaDTO[];
   formGroup: FormGroup;
   agendaIntervalo: AgendaIntervaloDTO[];
 
@@ -31,13 +32,30 @@ export class IntervaloAgendaPage {
       this.formGroup = this.formBuilder.group({
         id: null,
         day:['', Validators.required],
-        startMillisecond: ['',Validators.required],
-        endMillisecond: ['', Validators.required]
+        startHour1: [''],
+        startMinute1: [''],
+        endHour1: [''],
+        endMinute1: [''],
+        startHour2: [''],
+        startMinute2: [''],
+        endHour2: [''],
+        endMinute2: [''],
+        startHour3: [''],
+        startMinute3: [''],
+        endHour3: [''],
+        endMinute3: [''],
+        startHour4: [''],
+        startMinute4: [''],
+        endHour4: [''],
+        endMinute4: ['']
       });
   }
 
-  gerarHorarios(){
-      this.intervaloAgendaService.insert(this.formGroup.value)
+  inseririntervalos(){
+    console.log(this.formGroup.value)
+    console.log( this.agendaId)
+
+      this.intervaloAgendaService.insert(this.formGroup.value, this.agendaId)
       .subscribe(response => {
         this.showInsertOk();
       },
@@ -60,10 +78,41 @@ export class IntervaloAgendaPage {
   alert.present();
 }
 
+ionViewDidLoad() {
+  console.log('ionViewDidLoad IntervaloAgendaPage')
+}
 
+prepararDados(value) : AgendaIntervaloDTO[] {
+  let lista = [];
+  lista.push({day: value.day,
+    startHour: value.startHour1,
+    startMinute: value.startMinute1,
+    endHour: value.endHour1,
+    endMinute: value.endMinute1,
+    startHour: value.startHour2,
+    startMinute: value.startMinute2,
+    endHour: value.endHour2,
+    endMinute: value.endMinute2,
+    startHour: value.startHour3,
+    startMinute: value.startMinute3,
+    endHour: value.endHour3,
+    endMinute: value.endMinute3,
+    startHour: value.startHour4,
+    startMinute: value.startMinute4,
+    endHour: value.endHour4,
+    endMinute: value.endMinute4
+      })
+  return []
+}
 
+/*
   ionViewDidLoad() {
-    console.log('ionViewDidLoad IntervaloAgendaPage');
-  }
-
+    let agendaId = this.navParams.get('agendaId');
+    this.intervaloAgendaService.receberAgenda(agendaId)
+      .subscribe(response =>{
+        this.item = response;
+      },
+      error => {})
+  };
+*/
 }

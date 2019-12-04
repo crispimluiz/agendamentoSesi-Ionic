@@ -1,5 +1,5 @@
 export interface AgendaDTO {
-  id : string,
+  id : number,
   description: String,
   startDate: Date,
   endDate: Date

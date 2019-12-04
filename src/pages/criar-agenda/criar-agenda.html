@@ -14,17 +14,17 @@
     <form class = "dataAgenda" [formGroup]="formGroup" (ngSubmit)="criarAgenda(); $event.preventDefault()">
         <ion-item>
             <ion-label style= "color: blue; font-size: 20px" stacked>Coloque a Descrição do Perido*</ion-label>
-            <ion-input formControlName="description" type="text" placeholder="Descrição do Periodo"></ion-input>
+            <ion-input formControlName="description" required="required" type="text" placeholder="Descrição do Periodo"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label style= "color: blue; font-size: 20px" stacked>Coloque a Data Inicial*</ion-label>
-            <ion-input formControlName="startDate" type="date" placeholder="Início do Periodo"></ion-input>
+            <ion-input formControlName="startDate" required="required" type="date" placeholder="Início do Periodo"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label style= "color: blue; font-size: 20px" stacked>Coloque a Data Final*</ion-label>
-            <ion-input formControlName="endDate" type="date" placeholder="Fim do Periodo"></ion-input>
+            <ion-input formControlName="endDate" required="required" type="date" placeholder="Fim do Periodo"></ion-input>
         </ion-item>
 
 

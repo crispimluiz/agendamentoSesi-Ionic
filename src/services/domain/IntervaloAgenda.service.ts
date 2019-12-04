@@ -12,13 +12,14 @@ export class IntervaloAgendaService{
   }
 
 
-  receberAgenda(agenda_id: string){
+  receberAgenda(agendaId: number){
     return this.http.get(`${API_CONFIG.baseUrl}/agenda/?`)
   }
 
-  insert (obj : AgendaIntervaloDTO){
+  insert (obj : AgendaIntervaloDTO[], agendaId : number){
+
     return this.http.post(
-      `${API_CONFIG.baseUrl}/intervalos`,
+      `${API_CONFIG.baseUrl}/agenda/${agendaId}/inseririntervalos`,
       obj,
       {
         observe: 'response',

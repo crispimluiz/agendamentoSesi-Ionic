@@ -11,7 +11,7 @@
 <!-- <ion-label style= "color: blue; font-size: 20px; text-align: center" stacked>Escolher uma Agenda*</ion-label>-->
        <ion-list>
           <button ion-item *ngFor="let agendaItem of agendas" (click)="showAgendaIntervalo(agendaItem.id)">
-                   <H2>{{agendaItem.description}}</H2>
+            <H2> ID: {{agendaItem.id}} /Descrição: {{agendaItem.description}}</H2>
           </button>
         </ion-list>
 </ion-content>

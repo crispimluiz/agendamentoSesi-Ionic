@@ -1,6 +1,7 @@
 export interface AgendaIntervaloDTO{
-  id : string,
-  day: Date,
-  startMillisecond: Date,
-  endMillisecond: Date
+  id : number,
+  day: string,
+  startMillisecond: string,
+  endMillisecond: string
+
 }

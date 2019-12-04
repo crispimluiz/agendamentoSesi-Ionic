@@ -1,5 +1,5 @@
 export interface TurmaDTO{
-  id : string,
+  id : number,
   turmaDescricao : string,
   ativa : string,
   observacao : string

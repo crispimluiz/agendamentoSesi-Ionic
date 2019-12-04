@@ -1,4 +1,4 @@
 export interface atendente{
-  id : string,
+  id : number,
   nomeAtendente : string
 }
